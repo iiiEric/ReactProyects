@@ -3,7 +3,7 @@ const api_key = import.meta.env.VITE_FILM_API_KEY
 export const searchMovies = async ( {query} ) => {
     try
     {
-        const response = await fetch(`http://www.omdbapi.com/?apikey=${api_key}&s=${query}&type=movie`)
+        const response = await fetch(`https://www.omdbapi.com/?apikey=${api_key}&s=${query}&type=movie`)
         const json = await response.json()
         const movies = json.Search
         return movies?.map(m => (
